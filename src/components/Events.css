@@ -1,0 +1,308 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   Events.css
+   All opacity / transform values are driven by JS every frame.
+   CSS handles: layout, static visual design, hover states, responsive.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Section ─────────────────────────────────────────────────────────────── */
+.ev-section {
+  position: relative;
+}
+
+.ev-scroll {
+  position: relative;
+  /* height set inline: TOTAL_VH × 100vh */
+}
+
+/* ── Sticky viewport ─────────────────────────────────────────────────────── */
+.ev-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--maroon-deep, #14040a);
+  isolation: isolate;
+}
+
+/* Bottom Mithila stripe */
+.ev-sticky::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 8px;
+  z-index: 40;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--gold, #c9963a)         0px,  var(--gold, #c9963a)         6px,
+    var(--maroon, #6b1a2a)       6px,  var(--maroon, #6b1a2a)      12px,
+    var(--gold-light, #e8b96a)  12px,  var(--gold-light, #e8b96a)  18px,
+    var(--maroon-deep, #14040a) 18px,  var(--maroon-deep, #14040a) 24px
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ── Background layers ───────────────────────────────────────────────────── */
+.ev-bg {
+  position: absolute;
+  inset: 0;
+  will-change: opacity;
+  pointer-events: none;
+  /* opacity + zIndex set by JS */
+}
+
+.ev-bg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.78) brightness(0.48);
+}
+
+.ev-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top,
+      rgba(20,4,10,0.96) 0%,
+      rgba(20,4,10,0.52) 44%,
+      rgba(20,4,10,0.14) 100%),
+    linear-gradient(to right,
+      rgba(20,4,10,0.55) 0%,
+      rgba(20,4,10,0.08) 58%,
+      transparent        100%);
+}
+
+/* ── Intro layer — "THE CELEBRATIONS" ───────────────────────────────────── */
+.ev-intro-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* The wrapper div — opacity + transform driven by JS, no CSS transition */
+.ev-intro-layer > div {
+  /* intentionally unstyled; JS drives everything */
+}
+
+.ev-intro-title {
+  font-family: var(--font-display, "Cormorant Garamond", serif);
+  font-size: clamp(2.4rem, 10vw, 8rem);
+  font-weight: 600;
+  color: var(--ivory, #faf5ec);
+  letter-spacing: 0.06em;   /* JS overrides per-frame */
+  text-align: center;
+  line-height: 0.92;
+  margin: 0;
+  opacity: 0.90;
+  /* NO CSS transition — animation is purely JS-driven */
+}
+
+/* ── Content panels ──────────────────────────────────────────────────────── */
+/* Centered in the viewport. transformOrigin: center center so burst
+   animation expands symmetrically outward — matching the title exactly.  */
+.ev-panel {
+  position: absolute;
+  /* Horizontally + vertically centered via flexbox on .ev-sticky,
+     then offset downward so content sits in the lower-center reading zone */
+  top: 50%;
+  left: 50%;
+  /* NO transform here — JS writes: translate(-50%,-50%) scale(N) */
+  width: min(560px, calc(100% - 48px));
+  text-align: center;
+  pointer-events: none;
+  /* opacity + transform driven by JS every frame */
+  will-change: transform, opacity;
+}
+
+/* ── Panel inner (not animated — preserves text sharpness) ──────────────── */
+.ev-panel__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ── Icon ────────────────────────────────────────────────────────────────── */
+.ev-panel__icon {
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+  /* opacity staggered in by JS */
+}
+
+/* ── Title ───────────────────────────────────────────────────────────────── */
+.ev-panel__title {
+  font-family: var(--font-display, "Cormorant Garamond", serif);
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 600;
+  color: var(--ivory, #faf5ec);
+  letter-spacing: 0.06em;   /* JS drives this */
+  line-height: 1.08;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 32px rgba(0,0,0,0.55);
+  /* title opacity is always 1 — the wrapper handles overall opacity */
+}
+
+/* ── Date badge ──────────────────────────────────────────────────────────── */
+.ev-panel__date {
+  display: block;
+  font-family: var(--font-sans, "Jost", sans-serif);
+  font-size: 0.60rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-light, #e8b96a);
+  margin-bottom: 10px;
+  /* opacity staggered in by JS */
+}
+
+/* ── Time ────────────────────────────────────────────────────────────────── */
+.ev-panel__time {
+  font-family: var(--font-body, Georgia, serif);
+  font-style: italic;
+  font-size: 1.06rem;
+  color: var(--gold-light, #e8b96a);
+  margin: 0 0 14px;
+  /* opacity staggered in by JS */
+}
+
+/* ── Description ─────────────────────────────────────────────────────────── */
+.ev-panel__desc {
+  font-family: var(--font-body, Georgia, serif);
+  font-size: 1.02rem;
+  color: rgba(250,245,236,0.62);
+  line-height: 1.82;
+  max-width: 460px;
+  margin: 0 0 28px;
+  /* opacity staggered in by JS */
+}
+
+/* ── CTA button ──────────────────────────────────────────────────────────── */
+.ev-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(201,150,58,0.12);
+  border: 1px solid rgba(201,150,58,0.38);
+  color: var(--gold-light, #e8b96a);
+  padding: 11px 26px;
+  font-family: var(--font-sans, "Jost", sans-serif);
+  font-size: 0.61rem;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+  /* Transition only non-JS-driven properties */
+  transition: background 0.28s ease, border-color 0.28s ease,
+              color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.ev-cta:hover,
+.ev-cta--active {
+  background: rgba(201,150,58,0.26);
+  border-color: var(--gold, #c9963a);
+  color: var(--ivory, #faf5ec);
+  box-shadow: 0 6px 24px rgba(201,150,58,0.22);
+}
+
+.ev-cta__arrow {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  transition: transform 0.28s ease;
+}
+
+.ev-cta:hover .ev-cta__arrow,
+.ev-cta--active .ev-cta__arrow {
+  transform: translateX(4px);
+}
+
+/* ── Navigation dots ─────────────────────────────────────────────────────── */
+.ev-dots {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.ev-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(250,245,236,0.18);
+  border: 1px solid rgba(201,150,58,0.22);
+  transition: background 0.32s ease, border-color 0.32s ease, transform 0.32s ease;
+  display: block;
+}
+
+.ev-dot--active {
+  background: var(--gold, #c9963a);
+  border-color: var(--gold, #c9963a);
+  transform: scale(1.55);
+}
+
+/* ── Scroll hint ─────────────────────────────────────────────────────────── */
+.ev-hint {
+  position: absolute;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: rgba(201,150,58,0.58);
+  font-family: var(--font-sans, "Jost", sans-serif);
+  font-size: 0.56rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  animation: ev-bounce 2.6s ease-in-out infinite;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.ev-hint__arrow {
+  width: 15px;
+  height: 15px;
+}
+
+@keyframes ev-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(9px); }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .ev-panel {
+    width: calc(100% - 40px);
+    padding: 0 4px;
+  }
+
+  .ev-intro-title {
+    font-size: clamp(2rem, 9vw, 4rem);
+  }
+
+  .ev-panel__title {
+    font-size: clamp(1.7rem, 7vw, 2.6rem);
+  }
+
+  .ev-dots {
+    right: 14px;
+  }
+}

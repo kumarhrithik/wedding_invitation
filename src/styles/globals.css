@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ═══════════════════════════════════════════════════════
+   MITHILA WEDDING — GLOBAL DESIGN SYSTEM
+   Roots in Madhubani art: bold pigments, no empty space,
+   geometric borders, lotus/fish/peacock motifs.
+═══════════════════════════════════════════════════════ */
+
+:root {
+  /* Palette */
+  --maroon: #6B1A2A;
+  --maroon-deep: #3D0A14;
+  --maroon-mid: #8B2535;
+  --maroon-light: #B03D52;
+  --gold: #C9963A;
+  --gold-light: #E8B96A;
+  --gold-pale: #F5DFA0;
+  --gold-deep: #8A6520;
+  --ivory: #FAF5EC;
+  --ivory-dark: #F0E8D5;
+  --cream: #FDF8EE;
+  --cream-warm: #F7EDD8;
+  --text-dark: #1E0A10;
+  --text-mid: #4A2030;
+  --text-light: #7A4A55;
+
+  /* Typography */
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-sans: 'Lato', sans-serif;
+
+  /* Shadows */
+  --shadow-gold: 0 4px 40px rgba(201, 150, 58, 0.25);
+  --shadow-card: 0 8px 50px rgba(107, 26, 42, 0.16);
+  --shadow-deep: 0 20px 80px rgba(61, 10, 20, 0.35);
+
+  /* Easing */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  line-height: 1.75;
+}
+
+::selection {
+  background: var(--maroon);
+  color: var(--gold-pale);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--maroon-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 0;
+}
+
+/* ── Layout ── */
+.section-padding {
+  padding: 100px 24px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Ornament divider ── */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  margin: 26px auto;
+  width: fit-content;
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 60%);
+}
+
+.ornament::after {
+  background: linear-gradient(90deg, var(--gold) 40%, transparent);
+}
+
+.ornament-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ── Mithila stripe border — used in Hero, Invitation, Footer ── */
+.mithila-stripe {
+  height: 9px;
+  background: repeating-linear-gradient(90deg,
+      var(--gold) 0px, var(--gold) 6px,
+      var(--maroon) 6px, var(--maroon) 12px,
+      var(--gold-light) 12px, var(--gold-light) 18px,
+      var(--maroon-deep)18px, var(--maroon-deep)24px);
+  opacity: 0.6;
+}
+
+/* ── Section label ── */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ── Generic scroll-reveal states (used by multiple sections) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.85s var(--ease-expo), transform 0.85s var(--ease-expo);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.85s var(--ease-expo), transform 0.85s var(--ease-expo);
+}
+
+.reveal--left.reveal--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal--right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.85s var(--ease-expo), transform 0.85s var(--ease-expo);
+}
+
+.reveal--right.reveal--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 900px) {
+  .section-padding {
+    padding: 80px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-padding {
+    padding: 64px 18px;
+  }
+}

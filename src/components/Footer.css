@@ -1,0 +1,56 @@
+/* ══════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════ */
+.footer {
+  background: var(--maroon-deep);
+  border-top: 1px solid rgba(201,150,58,0.15);
+  position: relative; overflow: hidden;
+}
+.footer::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 200px;
+  background: radial-gradient(ellipse, rgba(201,150,58,0.07) 0, transparent 70%);
+  pointer-events: none;
+}
+.footer__top {
+  text-align: center; padding: 52px 24px 32px;
+  border-bottom: 1px solid rgba(201,150,58,0.1);
+  position: relative; z-index: 1;
+}
+.footer__ornament {
+  display: flex; align-items: center; justify-content: center;
+  gap: 18px; margin-bottom: 24px;
+}
+.footer__line {
+  display: block; width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,150,58,0.42));
+}
+.footer__line:last-child { background: linear-gradient(90deg, rgba(201,150,58,0.42), transparent); }
+.footer__symbol { color: var(--gold); font-size: 1.2rem; }
+.footer__names {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 2rem);
+  color: var(--ivory); letter-spacing: 0.09em; margin-bottom: 12px;
+}
+.footer__amp { font-family: var(--font-body); font-style: italic; color: var(--gold); }
+.footer__date {
+  font-family: var(--font-sans); font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(201,150,58,0.4);
+}
+.footer__nav {
+  display: flex; justify-content: center; gap: 22px;
+  margin-top: 22px; flex-wrap: wrap;
+}
+.footer__nav-link {
+  font-family: var(--font-sans); font-size: 0.56rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(250,245,236,0.28); text-decoration: none; transition: color 0.3s;
+}
+.footer__nav-link:hover { color: var(--gold-light); }
+.footer__bottom { padding: 16px 24px; text-align: center; position: relative; z-index: 1; }
+.footer__credit {
+  font-family: var(--font-body); font-style: italic;
+  font-size: 0.84rem; color: rgba(250,245,236,0.2);
+}

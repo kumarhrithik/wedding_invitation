@@ -1,0 +1,88 @@
+.event-card {
+  position: relative; background: var(--ivory);
+  border: 1px solid rgba(201,150,58,0.18);
+  padding: 26px 22px 26px 26px; cursor: pointer;
+  display: flex; align-items: center; gap: 18px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  transition: all 0.38s var(--ease-expo); overflow: hidden;
+}
+.event-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,150,58,0) 0, rgba(201,150,58,0.07) 100%);
+  opacity: 0; transition: opacity 0.38s;
+}
+.event-card:hover { border-color: var(--event-color, var(--gold)); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(107,26,42,0.15); }
+.event-card:hover::before { opacity: 1; }
+.event-card--active {
+  border-color: var(--event-color, var(--gold));
+  background: linear-gradient(135deg, var(--ivory) 0%, rgba(201,150,58,0.07) 100%);
+  box-shadow: 0 12px 40px rgba(107,26,42,0.2); transform: translateY(-4px);
+}
+.event-card--active::before { opacity: 1; }
+
+.event-card__glow {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, transparent, var(--event-color, var(--gold)), transparent);
+  transform: scaleY(0); transform-origin: center;
+  transition: transform 0.45s var(--ease-expo);
+}
+.event-card:hover .event-card__glow,
+.event-card--active .event-card__glow { transform: scaleY(1); }
+
+.event-card__icon {
+  font-size: 1.75rem; flex-shrink: 0; width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(107,26,42,0.05); border: 1px solid rgba(201,150,58,0.2);
+  border-radius: 50%; transition: all 0.35s; position: relative; z-index: 1;
+}
+.event-card:hover .event-card__icon,
+.event-card--active .event-card__icon {
+  background: rgba(201,150,58,0.12);
+  border-color: var(--event-color, var(--gold)); transform: scale(1.08);
+}
+
+.event-card__content { flex: 1; position: relative; z-index: 1; }
+.event-card__date {
+  font-family: var(--font-sans); font-size: 0.58rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--event-color, var(--gold)); margin-bottom: 4px; display: block;
+}
+.event-card__title {
+  font-family: var(--font-display); font-size: 1.05rem;
+  color: var(--maroon); letter-spacing: 0.04em; margin-bottom: 4px;
+  transition: color 0.3s;
+}
+.event-card:hover .event-card__title { color: var(--maroon-deep); }
+.event-card__time {
+  font-family: var(--font-body); font-style: italic;
+  font-size: 0.9rem; color: var(--text-light);
+}
+
+.event-card__arrow {
+  color: var(--event-color, var(--gold)); opacity: 0;
+  transform: translateX(-8px); transition: all 0.35s var(--ease-expo);
+  flex-shrink: 0; position: relative; z-index: 1;
+}
+.event-card__arrow svg { width: 17px; height: 17px; }
+.event-card:hover .event-card__arrow,
+.event-card--active .event-card__arrow { opacity: 1; transform: translateX(0); }
+
+.event-card__active-dot { position: absolute; top: 12px; right: 14px; z-index: 2; }
+.event-card__active-dot span {
+  display: block; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--event-color, var(--gold));
+  animation: dotPulse 1.6s ease-in-out infinite;
+}
+@keyframes dotPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:0.5} }
+
+.event-card__corner-cut {
+  position: absolute; bottom: 0; right: 0; width: 0; height: 0; border-style: solid;
+  border-width: 0 0 12px 12px;
+  border-color: transparent transparent rgba(201,150,58,0.22) transparent;
+  z-index: 2; transition: border-color 0.35s;
+}
+.event-card:hover .event-card__corner-cut,
+.event-card--active .event-card__corner-cut {
+  border-color: transparent transparent var(--event-color, var(--gold)) transparent;
+  opacity: 0.5;
+}
