@@ -213,3 +213,47 @@
     padding: 0 15px;
   }
 }
+@media (max-width: 768px) {
+  .photos__hscroll-header { top: 24px; }
+  .photos__hscroll-title { font-size: clamp(1.2rem, 5vw, 1.6rem); }
+  .photos__hscroll-sub { font-size: 0.8rem; margin-top: 4px; }
+
+  .photos__track {
+    margin-top: 100px;           /* clear the header */
+    gap: 10px;
+    padding: 0 16px;
+    min-height: 0;
+    align-items: center;
+  }
+
+  /* Items fill most of the screen height */
+  .photos__track-item {
+    width: 72vw;                 /* nearly full width, slight peek at next card */
+    height: 65vh;                /* tall and immersive */
+  }
+
+  .photos__progress-bar {
+    bottom: 18px;
+    left: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photos__track-item {
+    width: 78vw;
+    height: 62vh;
+  }
+}
+
+@media (max-width: 390px) {
+  .photos__track {
+    gap: 8px;
+    padding: 0 12px;
+    margin-top: 88px;
+  }
+  .photos__track-item {
+    width: 82vw;
+    height: 60vh;
+  }
+}

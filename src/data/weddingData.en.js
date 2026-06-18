@@ -209,9 +209,9 @@ export const sectionLabels = {
 // ─── Photos ───────────────────────────────────────────────────────────────────
 
 export const photos = [
-  { id: "p1", src: `${process.env.PUBLIC_URL}/photos/2.jpeg`, caption: "" },
-  { id: "p4", src: `${process.env.PUBLIC_URL}/photos/5.jpeg`, caption: "" },
   { id: "p2", src: `${process.env.PUBLIC_URL}/photos/6.jpeg`, caption: "" },
+  { id: "p4", src: `${process.env.PUBLIC_URL}/photos/5.jpeg`, caption: "" },
+  { id: "p1", src: `${process.env.PUBLIC_URL}/photos/2.jpeg`, caption: "" },
 ];
 
 // ─── Venue ────────────────────────────────────────────────────────────────────

@@ -21,29 +21,22 @@ export default function Contact({ data }) {
   const handleChange = e =>
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const SCRIPT_URL ="https://script.google.com/macros/s/AKfycbw2HyzkK350bm6gZyK9r_Lbq2gfjCMeB_lXgm8Hv69iw2p5qnPNVAjKqMigwOT3q6Q1/exec";
+  const SCRIPT_URL ="https://script.google.com/macros/s/AKfycbyG8CghOW2ZUbMYyBLIacGa0Okir4wq8RVd2SAH1B-RajWE9d9-iEN3Q5YqMjPd5x5D/exec";
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setStatus("sending");
 
     try {
-      const response = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+        mode: "no-cors",
+        body: new URLSearchParams({
           name: form.name,
           message: form.message,
         }),
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit");
-      }
 
       setStatus("success");
 
@@ -53,12 +46,10 @@ export default function Contact({ data }) {
         rsvp: "",
       });
 
-      setTimeout(() => {
-        setStatus(null);
-      }, 5000);
+      setTimeout(() => setStatus(null), 5000);
 
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
       setStatus("error");
     }
   };
