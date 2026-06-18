@@ -79,14 +79,14 @@ export default function Hero({ data }) {
   const rafRef     = useRef(null);
 
   const leftImages = [
-    "/photos/sitaram.png",
-    "/photos/couple-sitting.png",
+    process.env.PUBLIC_URL + "/photos/sitaram.png",
+    process.env.PUBLIC_URL + "/photos/couple-sitting.png",
   ];
   const rightImages = [
-    "/photos/krishna.jpg",
-    "/photos/shubh-vivah.jpg",
+    process.env.PUBLIC_URL + "/photos/krishna.jpg",
+    process.env.PUBLIC_URL + "/photos/shubh-vivah.jpg",
   ];
-  const centerImg = "/photos/ganesh_ji.jpg";
+  const centerImg = process.env.PUBLIC_URL + "/photos/ganesh_ji.jpg";
 
   useEffect(() => {
     const update = () => {

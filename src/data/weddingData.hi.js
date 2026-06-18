@@ -78,21 +78,21 @@ export const eventsStatic = [
     icon:       "🌿",
     color:      "#E8B96A",
     bgGradient: "linear-gradient(135deg, #4A3000 0%, #8B6000 50%, #4A3000 100%)",
-    audioSrc:   "/audio/Navrai Maajhi English Vinglish 320 Kbps.mp3",
+    audioSrc:   `${process.env.PUBLIC_URL}/audio/Navrai Maajhi English Vinglish 320 Kbps.mp3`,
   },
   {
     id:         "sangeet",
     icon:       "🎶",
     color:      "#C9963A",
     bgGradient: "linear-gradient(135deg, #3A0A20 0%, #6B1A2A 50%, #3A0A20 100%)",
-    audioSrc:   "/audio/Mehendi Mashup 2021_ Aishwarya.mp3",
+    audioSrc:   `${process.env.PUBLIC_URL}/audio/Mehendi Mashup 2021_ Aishwarya.mp3`,
   },
   {
     id:         "baraat swagat and saat-phere",
     icon:       "🐎",
     color:      "#9B2C3E",
     bgGradient: "linear-gradient(135deg, #1A0A2E 0%, #3D1A5C 50%, #1A0A2E 100%)",
-    audioSrc:   "/audio/Kalaavathi-Video-Lyrical-Sarkaru-Vaari-Paata-Mahesh-Babu-Keerthy-Suresh-Thaman-S-Parasura.mp3",
+    audioSrc:   `${process.env.PUBLIC_URL}/audio/Kalaavathi-Video-Lyrical-Sarkaru-Vaari-Paata-Mahesh-Babu-Keerthy-Suresh-Thaman-S-Parasura.mp3`,
   },
   // {
   //   id:         "saat-phere",
@@ -106,7 +106,7 @@ export const eventsStatic = [
     icon:       "✨",
     color:      "#E8B96A",
     bgGradient: "linear-gradient(135deg, #0D1A0D 0%, #1A3A1A 50%, #0D1A0D 100%)",
-    audioSrc:   "/audio/Sajh Dhaj Ke Mausam 320 Kbps.mp3",
+    audioSrc:   `${process.env.PUBLIC_URL}/audio/Sajh Dhaj Ke Mausam 320 Kbps.mp3`,
   },
 ];
 
@@ -209,9 +209,9 @@ export const sectionLabels = {
 // ─── Photos ───────────────────────────────────────────────────────────────────
 
 export const photos = [
-  { id: "p1", src: "/photos/2.jpeg", caption: "" },
-  { id: "p4", src: "/photos/5.jpeg", caption: "" },
-  { id: "p2", src: "/photos/6.jpeg", caption: "" },
+  { id: "p1", src: `${process.env.PUBLIC_URL}/photos/2.jpeg`, caption: "" },
+  { id: "p4", src: `${process.env.PUBLIC_URL}/photos/5.jpeg`, caption: "" },
+  { id: "p2", src: `${process.env.PUBLIC_URL}/photos/6.jpeg`, caption: "" },
 ];
 
 // ─── Venue ────────────────────────────────────────────────────────────────────

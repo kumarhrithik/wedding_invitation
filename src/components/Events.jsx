@@ -4,10 +4,10 @@ import "./Events.css";
 
 // ─── Background images ────────────────────────────────────────────────────────
 const EVENT_IMAGES = [
-  "/photos/haldi_.png",
-  "/photos/mehendi.png",
-  "/photos/saat-phere.jpg",
-  "/photos/reception_1.jpg",
+  process.env.PUBLIC_URL + "/photos/haldi_.png",
+  process.env.PUBLIC_URL + "/photos/mehendi.png",
+  process.env.PUBLIC_URL + "/photos/saat-phere.jpg",
+  process.env.PUBLIC_URL + "/photos/reception_1.jpg",
 ];
 if (typeof window !== "undefined") {
   EVENT_IMAGES.forEach(src => { const img = new Image(); img.src = src; });
