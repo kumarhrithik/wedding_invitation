@@ -21,13 +21,46 @@ export default function Contact({ data }) {
   const handleChange = e =>
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = async e => {
+  const SCRIPT_URL ="https://script.google.com/macros/s/AKfycbw2HyzkK350bm6gZyK9r_Lbq2gfjCMeB_lXgm8Hv69iw2p5qnPNVAjKqMigwOT3q6Q1/exec";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     setStatus("sending");
-    await new Promise(r => setTimeout(r, 1500));
-    setStatus("success");
-    setForm({ name: "", message: "", rsvp: "" });
-    setTimeout(() => setStatus(null), 5000);
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          message: form.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+
+      setStatus("success");
+
+      setForm({
+        name: "",
+        message: "",
+        rsvp: "",
+      });
+
+      setTimeout(() => {
+        setStatus(null);
+      }, 5000);
+
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   return (
