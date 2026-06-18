@@ -89,7 +89,11 @@
 
 /* The wrapper div — opacity + transform driven by JS, no CSS transition */
 .ev-intro-layer > div {
-  /* intentionally unstyled; JS drives everything */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .ev-intro-title {

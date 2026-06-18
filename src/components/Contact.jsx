@@ -76,7 +76,7 @@ export default function Contact({ data }) {
                   required
                 />
               </div>
-              <div className="contact__field">
+              {/* <div className="contact__field">
                 <label className="contact__field-label" htmlFor="rsvp">
                   {labels.attendingLabel}
                 </label>
@@ -91,7 +91,7 @@ export default function Contact({ data }) {
                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                   ))}
                 </select>
-              </div>
+              </div> */}
               <div className="contact__field">
                 <label className="contact__field-label" htmlFor="message">
                   {labels.messageLabel}

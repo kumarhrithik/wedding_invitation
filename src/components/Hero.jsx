@@ -43,9 +43,17 @@ function CountdownTimer({ targetDate, countdownUnits }) {
 }
 
 function AnimatedName({ name, baseDelay }) {
+  // Intl.Segmenter correctly handles Devanagari grapheme clusters,
+  // keeping matras/nuktas attached to their base character.
+  // Falls back to Array.from (better than split("") but not perfect)
+  // for environments without Segmenter support.
+  const segments = typeof Intl !== "undefined" && Intl.Segmenter
+    ? [...new Intl.Segmenter().segment(name)].map(s => s.segment)
+    : Array.from(name);
+
   return (
     <h1 className="hero__name">
-      {name.split("").map((ch, i) => (
+      {segments.map((ch, i) => (
         <span
           key={i}
           className="hero__letter"
@@ -71,14 +79,14 @@ export default function Hero({ data }) {
   const rafRef     = useRef(null);
 
   const leftImages = [
-    "https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=600&q=80",
-    "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=600&q=80",
+    "/photos/sitaram.png",
+    "/photos/couple-sitting.png",
   ];
   const rightImages = [
-    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80",
-    "https://images.unsplash.com/photo-1561209548-dcbe37b3f29f?w=600&q=80",
+    "/photos/krishna.jpg",
+    "/photos/shubh-vivah.jpg",
   ];
-  const centerImg = "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400&q=85";
+  const centerImg = "/photos/ganesh_ji.jpg";
 
   useEffect(() => {
     const update = () => {

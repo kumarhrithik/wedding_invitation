@@ -9,7 +9,7 @@ export const coupleNames = {
   brideFamily: "Gupta Family",
 };
 
-export const weddingDate = "2026-02-24T00:00:00+05:30";
+export const weddingDate = "2026-06-24T00:00:00+05:30";
 
 // ─── Invitation ───────────────────────────────────────────────────────────────
 
@@ -23,28 +23,28 @@ export const invitationData = {
   salutation:   "The families of both sides joyfully announce the auspicious union of",
 
   groom: {
-    honorific:       "Chi.",
-    firstName:       "Hrithik",
-    fullName:        "Hrithik Gupta",
+    honorific:       "Chiranjeevi",
+    firstName:       "Hrithik Kumar",
+    fullName:        "Hrithik Kumar",
     fatherHonorific: "Shri",
-    fatherName:      "Dummy Father Full Name (Groom Side)",
+    fatherName:      "Ashok G. Gupta",
     motherHonorific: "Smt.",
-    motherName:      "Dummy Mother Full Name (Groom Side)",
+    motherName:      "Kumari Smita Gupta",
     familyName:      "Gupta Family",
     village:         "Jaynagar, Madhubani, Bihar",
     lineageNote:     "",
   },
 
   bride: {
-    honorific:       "Sau.",
-    firstName:       "Chanda",
-    fullName:        "Chanda Gupta",
+    honorific:       "Ayushmati",
+    firstName:       "Chanda Shrishta",
+    fullName:        "Chanda Shrishta",
     fatherHonorific: "Shri",
-    fatherName:      "Dummy Father Full Name (Bride Side)",
+    fatherName:      "Girish Kumar Gupta",
     motherHonorific: "Smt.",
-    motherName:      "Dummy Mother Full Name (Bride Side)",
+    motherName:      "Bharti Devi",
     familyName:      "Gupta Family",
-    village:         "Madhubani, Bihar",
+    village:         "Birpur, Supaul, Bihar",
     lineageNote:     "",
   },
 
@@ -53,20 +53,20 @@ export const invitationData = {
     "Kindly grace us with your presence across all three days of celebration — from the sacred Matkor & Haldi to the joyous Baraat & Saat Phere — and bless the newlyweds as they begin their divine journey together.",
   ],
 
-  auspiciousNote: "Vivah Panchami Muhurat — 22 to 24 February 2026",
+  auspiciousNote: "Vivah Panchami Muhurat — 22 to 24 June 2026",
 
   dateBlock: {
     label:    "Wedding Dates",
-    dates:    "22 – 24 February 2026",
-    venue:    "Shri Ram Vivah Mandap",
+    dates:    "22 – 24 June 2026",
+    venue:    "Marwadi Vivah Bhawan",
     location: "Jaynagar, Madhubani, Bihar",
   },
 
   footer: {
-    groomSide:      "Gupta Family (Groom's Side)",
-    brideSide:      "Gupta Family (Bride's Side)",
+    // groomSide:      "Gupta Family",
+    // brideSide:      "Gupta Family (Bride's Side)",
     nimantrak:      "Hosts",
-    nimantrakNames: "Dummy Host Name 1, Dummy Host Name 2",
+    nimantrakNames: "Gupta Family",
   },
 };
 
@@ -88,73 +88,73 @@ export const eventsStatic = [
     audioSrc:   "/audio/Mehendi Mashup 2021_ Aishwarya.mp3",
   },
   {
-    id:         "baraat",
+    id:         "baraat swagat and saat-phere",
     icon:       "🐎",
     color:      "#9B2C3E",
     bgGradient: "linear-gradient(135deg, #1A0A2E 0%, #3D1A5C 50%, #1A0A2E 100%)",
-    audioSrc:   "/audio/Sajh Dhaj Ke Mausam 320 Kbps.mp3",
-  },
-  {
-    id:         "saat-phere",
-    icon:       "🔥",
-    color:      "#C9963A",
-    bgGradient: "linear-gradient(135deg, #2C1000 0%, #6B3A00 50%, #2C1000 100%)",
     audioSrc:   "/audio/Kalaavathi-Video-Lyrical-Sarkaru-Vaari-Paata-Mahesh-Babu-Keerthy-Suresh-Thaman-S-Parasura.mp3",
   },
+  // {
+  //   id:         "saat-phere",
+  //   icon:       "🔥",
+  //   color:      "#C9963A",
+  //   bgGradient: "linear-gradient(135deg, #2C1000 0%, #6B3A00 50%, #2C1000 100%)",
+  //   audioSrc:   "/audio/Kalaavathi-Video-Lyrical-Sarkaru-Vaari-Paata-Mahesh-Babu-Keerthy-Suresh-Thaman-S-Parasura.mp3",
+  // },
   {
     id:         "reception",
     icon:       "✨",
     color:      "#E8B96A",
     bgGradient: "linear-gradient(135deg, #0D1A0D 0%, #1A3A1A 50%, #0D1A0D 100%)",
-    audioSrc:   "/audio/Gujju Pataka Satyaprem Ki Katha 320 Kbps.mp3",
+    audioSrc:   "/audio/Sajh Dhaj Ke Mausam 320 Kbps.mp3",
   },
 ];
 
 export const eventsData = [
   {
     title:       "Matkor & Haldi",
-    date:        "22nd February",
-    time:        "Morning & Evening",
+    date:        "22nd June",
+    time:        "05:00 PM Onwards",
     audioLabel:  "Folk Dhol Beats",
     description: "The auspicious Matkor ritual — gathering sacred earth — followed by the joyous Haldi ceremony where turmeric and blessings are showered upon the couple. The evening procession brings the families together in song and celebration.",
-    dateTag:     "22–24 Feb 2026",
+    dateTag:     "22–24 June 2026",
     locationTag: "Jaynagar, Madhubani, Bihar",
   },
   {
     title:       "Sangeet & Mehendi",
-    date:        "23rd February",
-    time:        "6:00 PM onwards",
+    date:        "23rd June",
+    time:        "07:00 PM onwards",
     audioLabel:  "Sangeet Melodies",
     description: "An evening of music, dance, and artistry. Henna patterns weave stories of love on the bride's hands as the night fills with classical melodies and festive songs that bind both families as one.",
-    dateTag:     "22–24 Feb 2026",
-    locationTag: "Jaynagar, Madhubani, Bihar",
+    dateTag:     "22–24 June 2026",
+    locationTag: "Marwadi Vivah Bhawan, Jaynagar, Madhubani, Bihar",
   },
   {
-    title:       "Baraat",
-    date:        "24th February",
-    time:        "9:00 AM",
+    title:       "Baraat and Saat Phere",
+    date:        "24th June",
+    time:        "08:00 AM",
     audioLabel:  "Baraat Dhol",
-    description: "The groom's grand procession — a magnificent spectacle of music, dance, and jubilation — arrives to herald the union. Dhol beats echo as family and friends usher in a new chapter.",
-    dateTag:     "22–24 Feb 2026",
-    locationTag: "Jaynagar, Madhubani, Bihar",
+    description: "The groom's grand procession — a magnificent spectacle of music, dance, and jubilation — arrives to herald the union. Dhol beats echo as family and friends usher in a new chapter. Seven sacred vows, seven circles of fire. In this most profound moment, two souls become one — witnessed by the sacred flame, blessed by the universe, bound for eternity.",
+    dateTag:     "22–24 JUNE 2026",
+    locationTag: "Marwadi Vivah Bhawan, Jaynagar, Madhubani, Bihar",
   },
+  // {
+  //   title:       "",
+  //   date:        "24th February",
+  //   time:        "12:00 PM",
+  //   audioLabel:  "Vedic Mantras",
+  //   description: "Seven sacred vows, seven circles of fire. In this most profound moment, two souls become one — witnessed by the sacred flame, blessed by the universe, bound for eternity.",
+  //   dateTag:     "22–24 Feb 2026",
+  //   locationTag: "Jaynagar, Madhubani, Bihar",
+  // },
   {
-    title:       "Saat Phere",
-    date:        "24th February",
-    time:        "12:00 PM",
-    audioLabel:  "Vedic Mantras",
-    description: "Seven sacred vows, seven circles of fire. In this most profound moment, two souls become one — witnessed by the sacred flame, blessed by the universe, bound for eternity.",
-    dateTag:     "22–24 Feb 2026",
-    locationTag: "Jaynagar, Madhubani, Bihar",
-  },
-  {
-    title:       "Reception",
-    date:        "24th February",
+    title:       "Wedding Reception",
+    date:        "24th June",
     time:        "7:00 PM",
     audioLabel:  "Classical Shehnai",
     description: "A grand evening of celebration as Mr. & Mrs. Gupta welcome their guests. Revel in the joy of the newly wed couple amidst an evening of elegance, warmth, and festivity.",
-    dateTag:     "22–24 Feb 2026",
-    locationTag: "Jaynagar, Madhubani, Bihar",
+    dateTag:     "22–24 JUNE 2026",
+    locationTag: "Marwadi Vivah Bhawan, Jaynagar, Madhubani, Bihar",
   },
 ];
 
@@ -169,25 +169,25 @@ export function getEvents() {
 
 export const scheduleData = [
   {
-    date: "22nd February, Saturday",
+    date: "22nd June, Monday",
     items: [
       { time: "Morning",  event: "Matkor Ceremony", note: "Sacred earth ritual" },
-      { time: "Evening",  event: "Haldi Ceremony",  note: "Followed by procession" },
+      { time: "05:00 PM Onwards",  event: "Haldi Ceremony",  note: "Followed by procession" },
     ],
   },
   {
-    date: "23rd February, Sunday",
+    date: "23rd June, Tuesday",
     items: [
-      { time: "6:00 PM",  event: "Sangeet Night",   note: "Music & dance celebration" },
-      { time: "7:00 PM",  event: "Mehendi",          note: "Henna & festivities" },
+      { time: "07:00 PM",  event: "Sangeet Night",   note: "Music & dance celebration" },
+      { time: "08:00 PM",  event: "Mehendi",          note: "Henna & festivities" },
     ],
   },
   {
-    date: "24th February, Monday",
+    date: "24th June, Wednesday",
     items: [
-      { time: "9:00 AM",  event: "Baraat Procession", note: "Grand arrival" },
-      { time: "12:00 PM", event: "Saat Phere",         note: "Wedding ceremony" },
-      { time: "7:00 PM",  event: "Reception",          note: "Dinner & celebration" },
+      { time: "08:00 AM",  event: "Baraat Swagat",     note: "Groom arrival" },
+      { time: "10:00 AM", event: "Varmala and Saat Phere",      note: "Wedding ceremony" },
+      { time: "07:00 PM",  event: "Wedding Reception",          note: "Dinner & celebration" },
     ],
   },
 ];
@@ -209,26 +209,20 @@ export const sectionLabels = {
 // ─── Photos ───────────────────────────────────────────────────────────────────
 
 export const photos = [
-  { id: "p1", src: "/photos/IMG20240928120151.jpg", caption: "Haldi ceremony" },
-  { id: "p2", src: "/photos/IMG20241002144246.jpg", caption: "Sangeet night" },
-  { id: "p3", src: "/photos/IMG20241006074943.jpg", caption: "Baraat procession" },
-  { id: "p4", src: "/photos/IMG20220917155051.jpg", caption: "Baraat procession" },
-  { id: "p5", src: "/photos/IMG20220917155052.jpg", caption: "Baraat procession" },
-  { id: "p6", src: "/photos/IMG20220917155055.jpg", caption: "Baraat procession" },
-  { id: "p7", src: "/photos/IMG20220917155058.jpg", caption: "Baraat procession" },
-  { id: "p8", src: "/photos/IMG20220917155107.jpg", caption: "Baraat procession" },
-  { id: "p9", src: "/photos/IMG20220917155119.jpg", caption: "Baraat procession" },
+  { id: "p1", src: "/photos/2.jpeg", caption: "" },
+  { id: "p4", src: "/photos/5.jpeg", caption: "" },
+  { id: "p2", src: "/photos/6.jpeg", caption: "" },
 ];
 
 // ─── Venue ────────────────────────────────────────────────────────────────────
 
 export const venue = {
-  name:        "Shri Ram Vivah Mandap",
-  address:     "Marwadi Vivah Bhavan, NH-105, In Front Of Sarwdevmayi Mata Temple, Jaynagar, Madhubani, Bihar — 847226",
+  name:        "Marwadi Vivah Bhavan",
+  address:     "NH-105, In Front Of Sarwdevmayi Mata Temple, Jaynagar, Madhubani, Bihar — 847226",
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.897085180806!2d86.13998295298046!3d26.58767756866333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ec25a427843dcb%3A0xb4d7e4dd90118335!2sSarwdevmayi%20Mata%20Temple!5e0!3m2!1sen!2sin!4v1778737566525!5m2!1sen!2sin",
   mapUrl:      "https://maps.app.goo.gl/ppWDCLgkjg47fN719",
-  phone:       "+91 98765 43210",
-  email:       "wedding@arjunpriya2025.com",
+  // phone:       "+91 98765 43210",
+  // email:       "wedding@arjunpriya2025.com",
 };
 
 // ─── Contact Section Labels ───────────────────────────────────────────────────
@@ -236,17 +230,10 @@ export const venue = {
 export const contactLabels = {
   sectionLabel:     "We Would Love to See You",
   title:            "RSVP & Connect",
-  body:             "Your presence means the world to us. Fill in the form to confirm your attendance or send us your blessings — we will be overjoyed to celebrate this special day with you.",
+  body:             "Your presence means the world to us. We will be overjoyed to celebrate this special day with you.",
   namePlaceholder:  "Enter your full name",
   nameLabel:        "Your Name",
   attendingLabel:   "Attending?",
-  attendingDefault: "Please select…",
-  attendingOptions: [
-    { value: "yes-all",       label: "Yes — I'll attend all events" },
-    { value: "yes-wedding",   label: "Yes — Wedding day only" },
-    { value: "yes-reception", label: "Yes — Reception only" },
-    { value: "no",            label: "Sadly cannot attend" },
-  ],
   messageLabel:       "Message / Blessings",
   messagePlaceholder: "Share your wishes for the couple…",
   submitLabel:        "Send My RSVP",
@@ -291,20 +278,20 @@ export const venueLabels = {
 export const heroLabels = {
   invocation:    "✦ With the blessings of the divine ✦",
   tagline:       "Joyfully invite you to celebrate their union",
-  dateText:      "22 – 24\u00A0February\u00A02026",
+  dateText:      "22 – 24\u00A0June\u00A02026",
   locationText:  "Jaynagar, Madhubani, Bihar",
   ctaLabel:      "Explore the Celebrations",
   countdownUnits: ["Days", "Hours", "Mins", "Secs"],
-  bentoTags:     ["22–24 February 2026", "Jaynagar, Madhubani"],
+  bentoTags:     ["22–24 June 2026", "Jaynagar, Madhubani"],
 };
 
 // ─── Scroll Reveal Text ───────────────────────────────────────────────────────
 
-export const scrollRevealText =
-  "Two souls bound by love and the ancient traditions of Mithila — " +
-  "celebrating Matkor, Haldi, Sangeet, and Saat Phere across three " +
-  "sacred days, woven together by family, colour, music, and the " +
-  "eternal promise of a new beginning.";
+// export const scrollRevealText =
+//   "Two souls bound by love and the ancient traditions of Mithila — " +
+//   "celebrating Matkor, Haldi, Sangeet, and Saat Phere across three " +
+//   "sacred days, woven together by family, colour, music, and the " +
+//   "eternal promise of a new beginning.";
 
 export const scrollRevealEyebrow = "A Celebration of Love";
 

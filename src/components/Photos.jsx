@@ -85,17 +85,25 @@ export default function Photos({ data }) {
 
         <div className="photos__track" ref={trackRef}>
           {galleryImages.map((img, i) => (
-            <div key={i} className="photos__track-item">
+            <div
+              key={i}
+              className="photos__track-item"
+              onContextMenu={e => e.preventDefault()}
+            >
               <img
                 src={img.src}
-                alt={img.caption}
+                alt=""
                 loading="eager"
+                draggable="false"
                 onLoad={() => handleImageLoad(i)}
+                onDragStart={e => e.preventDefault()}
                 style={{
                   opacity: loadedImages[i] ? 1 : 0,
                   transition: "opacity 0.3s ease-in-out",
                 }}
               />
+              {/* Transparent shield intercepts right-click/drag directly on the image */}
+              <div className="photos__track-shield" onContextMenu={e => e.preventDefault()} />
               <div className="photos__track-overlay">
                 <span className="photos__track-caption">{img.caption}</span>
               </div>

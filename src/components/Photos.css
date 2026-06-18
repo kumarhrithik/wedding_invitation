@@ -1,6 +1,5 @@
 /* ══════════════════════════════════════════════════════
    PHOTOS — Horizontal scroll gallery only
-   FIXED: Consistent image sizes, proper loading
 ══════════════════════════════════════════════════════ */
 
 /* ── Outer scroll container (height set by JS) ── */
@@ -71,7 +70,7 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* ── Individual gallery item - FIXED CONSISTENT SIZES ── */
+/* ── Individual gallery item ── */
 .photos__track-item {
   flex-shrink: 0;
   position: relative;
@@ -80,12 +79,13 @@
   background: var(--ivory-dark);
   cursor: pointer;
   transition: border-color 0.35s;
-  /* FIXED: Consistent base size */
   width: 320px;
   height: 400px;
+  /* Prevent text/image selection */
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-/* Responsive sizes that maintain consistency */
 @media (max-width: 1200px) {
   .photos__track-item {
     width: 280px;
@@ -114,18 +114,6 @@
   }
 }
 
-/* Remove alternating widths to prevent size changes */
-.photos__track-item:nth-child(odd),
-.photos__track-item:nth-child(even) {
-  width: auto; /* Override the alternating widths */
-}
-
-/* Use the fixed widths instead */
-.photos__track-item {
-  width: 320px;
-  height: 400px;
-}
-
 .photos__track-item img {
   width: 100%;
   height: 100%;
@@ -134,8 +122,11 @@
   filter: saturate(0.88);
   transition: filter 0.5s, transform 0.55s var(--ease-expo);
   display: block;
-  /* FIXED: Prevent image distortion */
   image-rendering: auto;
+  /* Block right-click and drag on the img element itself */
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .photos__track-item:hover {
@@ -147,10 +138,22 @@
   transform: scale(1.04);
 }
 
+/* ── Transparent shield — sits above the image, blocks right-click/drag
+   in browsers where pointer-events: none still shows the context menu ── */
+.photos__track-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
+  cursor: pointer;
+  /* Do NOT set pointer-events: none here — it must intercept events */
+}
+
 /* Caption overlay on hover */
 .photos__track-overlay {
   position: absolute;
   inset: 0;
+  z-index: 3;
   background: linear-gradient(to top, rgba(30, 5, 10, 0.72) 0%, transparent 55%);
   opacity: 0;
   transition: opacity 0.38s;

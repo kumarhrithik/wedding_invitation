@@ -74,7 +74,7 @@
 @keyframes iconFloat { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-7px) scale(1.05)} }
 
 .event-modal__date {
-  font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.28em;
+  font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.28em;
   text-transform: uppercase; color: var(--gold-light); opacity: 0.75;
   margin-bottom: 12px; display: block;
 }

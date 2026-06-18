@@ -90,11 +90,11 @@ export default function Invitation({ data }) {
             <p className="invitation__date-location">{dateBlock.location}</p>
           </div>
 
-          <div className="invitation__footer">
+          {/* <div className="invitation__footer">
             <span className="invitation__family">{footer.groomSide}</span>
             <span className="invitation__divider">॥</span>
             <span className="invitation__family">{footer.brideSide}</span>
-          </div>
+          </div> */}
           <p className="invitation__nimantrak">
             {footer.nimantrak}: {footer.nimantrakNames}
           </p>
