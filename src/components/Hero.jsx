@@ -200,7 +200,7 @@ export default function Hero({ data }) {
           </div>
           <div className="hero__date-block">
             <p className="hero__families">
-              {coupleNames.groomFamily}&nbsp;·&nbsp;{coupleNames.brideFamily}
+              {coupleNames.groomFamily}
             </p>
             <p className="hero__date">{heroLabels.dateText}</p>
             <p className="hero__location">{heroLabels.locationText}</p>
