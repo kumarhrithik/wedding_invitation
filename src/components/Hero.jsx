@@ -79,7 +79,7 @@ export default function Hero({ data }) {
   const rafRef     = useRef(null);
 
   const leftImages = [
-    process.env.PUBLIC_URL + "/photos/sitaram.png",
+    process.env.PUBLIC_URL + "/photos/sitaram.PNG",
     process.env.PUBLIC_URL + "/photos/couple-sitting.png",
   ];
   const rightImages = [

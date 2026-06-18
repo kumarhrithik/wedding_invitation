@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 
-const BG_AUDIO_SRC  = "/audio/Aaj Sajeya Goldie Sohel 320 Kbps.mp3";
+const BG_AUDIO_SRC  = `${process.env.PUBLIC_URL}/audio/Aaj Sajeya Goldie Sohel 320 Kbps.mp3`;
 const FADE_STEPS    = 20;
 const FADE_INTERVAL = 40; // ms per step → ~800 ms total
 
